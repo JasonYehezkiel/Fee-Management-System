@@ -108,7 +108,7 @@ This project uses SQLite3 as the default database for storing member, attendance
 - The Database is located at `data/memberships.db`.
 - The Tables used include `members`, `attendanceLog`, `paymentLog`.
 
-#### How to Manage Database
+#### How to Manage Database:
 - Make sure you have sqlite3 on your computer (the version I use is 3.47.0)
 
 - **backup and restore**: To backup data, I do it with PowerShell, because it is easier to add timestamps.
@@ -172,11 +172,11 @@ logs/
 - **GET** `/api/attendance-list`
 - **Response**: JSON array containing attendance data (ID, member name, visit number)
 
-### Daftar Pembayaran
+### Payment List
 - **GET** `/api/payment-list`
 - **Response**: JSON array containing payment data (ID, member name, amount, status)
 
-### Pembayaran biaya
+### Payment of fees
 - **POST** `/api/pay`
 - **Parameter**:
 - `code`: Member code for payment processing
