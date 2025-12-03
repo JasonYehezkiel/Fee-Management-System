@@ -1,0 +1,15 @@
+<!-- Tabel untuk mencatat kehadiran -->
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Member</th>
+        <th>Visit#</th>
+    </tr>
+    {% for attendance in attendance_list %}
+    <tr>
+        <td>{{ attendance.memberCode }}</td>
+        <td>{{ attendance.member }}</td>
+        <td>{{ attendance.visitNumber }}</td>
+    </tr>
+    {% endfor %}
+</table>

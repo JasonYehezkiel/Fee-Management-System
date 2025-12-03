@@ -1,0 +1,36 @@
+<!-- Tabel untuk mencatat pembayaran -->
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Member</th>
+        <th>Amount</th>
+        <th>Status</th>
+        <th>Action</th>
+    </tr>
+    {% for payment in payment_list %}
+    <tr>
+        <td>{{ payment.memberCode }}</td>
+        <td>{{ payment.member }}</td>
+        <td>{{ payment.amount }}</td>
+        <td class="{% if payment.paid %}paid-status{% else %}unpaid-status{% endif %}">
+            {{ 'Paid' if payment.paid else 'Unpaid' }}
+        </td>
+        <td>
+            {% if not payment.paid %}
+            <button type="button" onclick="payNow('{{ payment.memberCode }}')">Pay Now</button>
+            {% endif %}
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
+<!-- Style untuk table_payment -->
+<style>
+    .paid-status {
+        color: green;
+    }
+
+    .unpaid-status {
+        color: red
+    }
+</style>

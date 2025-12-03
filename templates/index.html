@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fee Management System</title>
+    <!-- Link ke JQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- link ke file css -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css' )}}">
+</head>
+<body>
+    <nav>
+        <!-- Tombol navigasi untuk menampilkan halaman -->
+        <button type="button" onclick="showPage('register')">Register Member</button>
+        <button type="button" onclick="showPage('attendance')">Record Attendance</button>
+        <button type="button" onclick="showPage('reports')">View Reports</button>
+    </nav>
+
+    <!-- Halaman Register untuk mendaftarkan anggota baru -->
+    <div id="register" class="page">
+        <h2>Register New Member</h2>
+        <form id="registerForm">
+            <!-- Input anggota baru -->
+            <input type="text" 
+                   id="memberName" 
+                   required minlength = 2
+                   pattern="[A-Za-z\s]+"
+                   required placeholder="Enter Member Name">
+            <!-- Dropdown menu untuk tipe transportasi -->
+             <select id="transportType">
+                {% for key, value in fees.items() %}
+                    <option value="{{ key }}">{{ key | title }} ({{value | format_number }})</option>
+                {% endfor %}
+             </select>
+             <!-- Submit button -->
+             <button type="submit">Register</button>
+        </form>
+    </div>
+
+    <!-- Halaman Attendance untuk mencatat kehadiran anggota -->
+    <div id="attendance" class="page" style="display:none">
+        <h2>Record Attendance</h2>
+        <form id="attendanceForm">
+            <!-- Input member code -->
+            <input type="text" 
+                   id="memberCode"
+                   required placeholder="Enter Member Code">
+            <!-- Tombol untuk mengirimkan form kehadiran -->
+            <button type="submit">Record</button>
+        </form>
+    </div>
+
+    <!-- Halaman reports untuk melihat laporan kehadiran dan pembayaran -->
+     <div id="reports" class="page" style="display:none">
+        <h2>Reports</h2>
+        <!-- Tombol untuk memuat data kehadiran dan pembayaran -->
+         <button id="attendanceListBtn" type="button" onclick="loadAttendanceList()">Attendance List</button>
+         <button id="paymentListBtn" type="button" onclick="loadPaymentList()">Payment List</button>
+         <!-- Div ini akan digunakan untuk menampilak data laporan -->
+          <div id="reportData"></div>
+     </div>
+
+     <!-- link ke file JavaScript -->
+    <script src="{{ url_for('static', filename='js/main.js')}}"></script>
+</body>
+</html>

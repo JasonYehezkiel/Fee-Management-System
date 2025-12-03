@@ -1,0 +1,169 @@
+/* General styles */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Styling untuk navigasi */
+nav {
+    background-color: #0044cc;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Menjaga agar nav tetap di atas elemen lainnya */
+}
+
+nav button {
+    background-color: #007bff;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+nav button:hover {
+    background-color: #0056b3;
+}
+
+/* Page Containers */
+.page {
+    padding: 2rem;
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.page h2 {
+    margin-bottom: 1.5rem;
+    color: #0044cc;
+    font-size: 1.8rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+form input, form select {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+form button {
+    background-color: #28a745;
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #218838;
+}
+
+
+/* Tombol untuk daftar kehadiran dan pembayaran */
+#attendanceListBtn, #paymentListBtn {
+    background-color: #17a2b8;
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    margin-right: 5px;
+    transition: background-color 0.3s ease;
+}
+
+
+/* Report Table */
+
+#reportData {
+    margin-top: 1rem;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 5px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+table th {
+    background-color: #0044cc;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+table tr:nth-child(even) {
+    background-color: #f4f4f9;
+}
+
+
+table tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav {
+        text-align: left;
+    }
+
+    nav button {
+        display: block;
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .page {
+        padding: 1.5rem;
+    }
+
+    #reports {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #attendanceListBtn, #paymentListBtn {
+        margin: 10px 5px;
+    }
+
+    #reportData {
+        max-width: 100%;
+        overflow-x: auto;
+    }
+}
