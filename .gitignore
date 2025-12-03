@@ -1,5 +1,6 @@
 /env
 /__pycache__
+/services/__pycache__/
 *.jpg
 *.pdf
 *.mp4

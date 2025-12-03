@@ -108,7 +108,7 @@ This project uses SQLite3 as the default database for storing member, attendance
 - The Database is located at `data/memberships.db`.
 - The Tables used include `members`, `attendanceLog`, `paymentLog`.
 
-#### Cara Mengelola Database
+#### How to Manage Database
 - Make sure you have sqlite3 on your computer (the version I use is 3.47.0)
 
 - **backup and restore**: To backup data, I do it with PowerShell, because it is easier to add timestamps.
@@ -151,6 +151,8 @@ logs/
 └── models.log
 ```
 
+---
+
 ## 🔗 Endpoints
 
 ### Register Member
@@ -180,6 +182,8 @@ logs/
 - `code`: Member code for payment processing
 - **Response**: JSON message confirming the payment status.
 
+---
+
 ## 🧪 Usage
 
 1. **Register a New Member**
@@ -192,6 +196,8 @@ logs/
     - In the "View Reports" section, use the Attendance List and Payment List buttons to display attendance and payment records.
     - In the Payment List table, click Pay Now to complete a payment.
 
+---
+
 ## 🔌 Extensions
 
 The following Visual Studio Code extensions were used in this project:
@@ -201,6 +207,8 @@ The following Visual Studio Code extensions were used in this project:
 - [Python Debugger](https://marketplace.visualstudio.com/items?itemName=ms-python.debugpy)
 - [SQLite Viewer](https://marketplace.visualstudio.com/items?itemName=qwtel.sqlite-viewer) by Florian Klampfer
 - [vscode-pdf](https://marketplace.visualstudio.com/items?itemName=tomoki1207.pdf) by tomoki1207
+
+---
 
 ## 👤 Author
 
